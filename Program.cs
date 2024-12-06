@@ -11,6 +11,8 @@ namespace RowsColumns
             int multiplication = 1;
             int minRandom = 1;
             int maxRandom = 10;
+            int amountLine = 1;
+            int multiplicationColumn = 1;
 
             int[,] array = new int[3, 3];
 
@@ -30,6 +32,7 @@ namespace RowsColumns
                     if (j == 0)
                         multiplication *= array[i, j];
                 }
+
                 Console.WriteLine();
             }
 
