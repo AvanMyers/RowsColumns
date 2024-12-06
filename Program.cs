@@ -11,7 +11,7 @@ namespace RowsColumns
             int multiplication = 1;
             int minRandom = 1;
             int maxRandom = 10;
-            int amountLine = 1;
+            int amountLine = 2;
             int multiplicationColumn = 1;
 
             int[,] array = new int[3, 3];
@@ -25,16 +25,16 @@ namespace RowsColumns
                     number = random.Next(minRandom, maxRandom);
                     array[i, j] = number;
                     Console.Write(array[i, j]);
-
-                    if (i == 1)
-                        summ += array[i, j];
-
-                    if (j == 0)
-                        multiplication *= array[i, j];
                 }
 
                 Console.WriteLine();
             }
+
+            for (int i = 0; i < array.GetLength(1); i++)
+                summ += array[amountLine - 1, i];
+
+            for (int i = 0; i < array.GetLength(0); i++)
+                multiplication *= array[i, multiplicationColumn - 1];
 
             Console.WriteLine($"Сумма второй строки {summ}");
             Console.WriteLine($"Произведение первого столбца {multiplication}");
